@@ -1,0 +1,238 @@
+%%
+% Figure of the three fits for each of the two years.
+%
+
+
+\input{dynamical_model.tex}
+
+% \input{linfit_drawing.tex}
+
+\begin{figure}[!htb]
+  \centering
+  \begin{subfigure}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ModelFits-2012.pdf}
+   \caption{\quad2012}
+    \label{fig:ModelFits-2012}
+  \end{subfigure}
+  \begin{subfigure}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ModelFits-2016.pdf}
+   \caption{\quad2016}
+    \label{fig:ModelFits-2016}
+  \end{subfigure}
+
+  \caption{Observed daily frequencies (markers) and best-fit models (lines).
+    The dynamical impulse model is given in 
+    Equation 1. In four of the six network-year pairs, 
+    there is an increase in the frequency of metaphorical violence language in the
+    three-month study period: MSNBC in 2012 and all three networks in 2016. 
+    However, two of the six network-year pairs showed decreases in frequency
+    of metaphorical violence language use in one three-month period: CNN and Fox News
+    in 2012. 
+  } 
+  \label{fig:ModelFits}
+\end{figure}
+
+
+\begin{table}
+  \centering
+  \bgroup
+    \begin{subtable}{\textwidth}
+      \centering
+      \begin{tabular}{lr}
+        \toprule
+        Show (Network) & Total Uses \\
+        \midrule
+        The Rachel Maddow Show (MSNBC) & 93 \\
+        Hardball With Chris Matthews (MSNBC) & 208 \\
+        Anderson Cooper 360 (CNN) & 99 \\
+        Piers Morgan Tonight (CNN) & 118 \\
+        The O'Reilly Factor (Fox News) & 141 \\
+        Hannity (Fox News) & 133 \\
+        \bottomrule
+      \end{tabular}
+      \caption{Total number of uses metaphorical violence language by news show in 2012}
+      \label{tab:by-show-2012}
+    \end{subtable} \\  \vspace{1.5em}
+    \begin{subtable}{\textwidth}
+      \centering
+      \begin{tabular}{lr}
+        \toprule
+        Show (Network) & Total Uses \\
+        \midrule
+        The Rachel Maddow Show (MSNBC) & 66 \\
+        The Last Word with Lawrence O'Donnel (MSNBC) & 80 \\
+        Anderson Cooper 360 (CNN) & 100 \\
+        Erin Burnett OutFront (CNN) & 118 \\
+        The O'Reilly Factor (Fox News) & 146 \\
+        The Kelly File (Fox News) & 148 \\
+        \bottomrule
+      \end{tabular} \quad
+      \caption{Total number of uses metaphorical violence language by news show in 2016}
+      \label{tab:by-show-2016}
+    \end{subtable}
+  \egroup
+  \caption{Total uses by show in each of the two study years}
+  \label{tab:by-show}
+\end{table}
+
+
+%%
+% Table with network and violent words
+%
+\begin{table}[h]
+  \centering
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table2-2012.tex}
+    \caption{\quad 2012}
+    \label{tab:words-2012}
+  \end{subtable}
+  
+  \vspace{.25in}
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table2-2016.tex}
+    \caption{\quad 2016}
+    \label{tab:words-2016}
+  \end{subtable}
+
+  \caption{Uses and \emph{delta} for violence signals on each network in 2012 and 2016.}
+  \label{tab:words}
+\end{table}
+
+\begin{table}[h]
+  \centering
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table3-2012.tex}
+    % \input{Table3-2012.tex}
+    \caption{\quad 2012}
+    \label{tab:subjobj-2012}
+  \end{subtable}
+  
+  \vspace{.25in}
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table3-2016.tex}
+    % \input{Table3-2016.tex}
+    \caption{\quad 2016}
+    \label{tab:subjobj-2016}
+  \end{subtable}
+
+  \caption{Uses and \emph{delta} for Republican and Democratic candidates as
+  subject and object of metaphorical violence.}
+  \label{tab:subjobj}
+\end{table}
+
+%%
+% Table with details of the model fits
+%
+\begin{table}[h]
+  \centering
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table1-2012.tex}
+    \caption{\quad2012; total uses: 758}
+    \label{tab:fit-parameters-2012}
+  \end{subtable}
+  
+  \vspace{.25in}
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table1-2016.tex}
+    \caption{\quad2016; total uses: 583}
+    \label{tab:fit-parameters-2016}
+  \end{subtable}
+
+  \caption{Parameters for the best-fit (most likely) model for 2012 and 2016.}
+  \label{tab:fit-parameters}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+    \begin{subfigure}{0.9\linewidth}
+      \centering
+      \includegraphics[width=\textwidth]{Figures/2012-all.pdf}
+      \caption{2012}
+      \label{fig:2012-all-reg}
+    \end{subfigure} \\[2em]
+    \begin{subfigure}{0.9\linewidth}
+      \centering
+      \includegraphics[width=\textwidth]{Figures/2016-all.pdf}
+      \caption{2016}
+      \label{fig:2012-all-reg}
+    \end{subfigure}
+  \caption{Metaphorical violence tracked candidate tweets significantly in 2012 and
+    2016. Frequency is over all networks and subject/object relationships.
+    Correlation coefficient is greater in 2016 than 2012, supporting other 
+    claims of 2016 being a ``Twitter election.''
+  }
+  \label{fig:regressions-all}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.95\textwidth]{Figures/2012-network.pdf}
+  \caption{Regressions of metaphorical violence on each network in response
+   to tweets from @BarackObama and @MittRomney.}
+  \label{fig:2012-network}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.95\textwidth]{Figures/2016-network.pdf}
+  \caption{Regressions of metaphorical violence on each network in response
+   to tweets from @HillaryClinton and @realDonaldTrump.}
+  \label{fig:2016-network}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Figures/2012-subjobj.pdf}
+  \caption{Regressions of metaphorical violence faceted by subject and object
+    in response to to tweets from @BarackObama and @MittRomney.}
+  \label{fig:2012-subjobj}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Figures/2016-subjobj.pdf}
+  \caption{Regressions of metaphorical violence faceted by subject and object
+    in response to to tweets from @HillaryClinton and @realDonaldTrump.}
+  \label{fig:2016-subjobj}
+\end{figure}
+
+
+
+%%
+% Table with regression coefficients, r^2, and p-values for MV vs. tweets
+% from all candidates in both years.
+%
+\begin{table}[h]
+  \centering
+  \input{TweetCoeffTable.tex}
+  \caption{Regression coefficients, $r^2$, and significance indicators for
+    linear models of metaphorical violence usage as a function of the number of
+    tweets from individual candidates. The regression
+    coefficient represents the additional metaphorical violence uses that 
+    occur with each message the candidate tweets. $r^2$ represents the fraction
+    of variance that is represented through a linear relationship with candidate
+    tweets. The 2016 candidates's Twitter use had a greater impact on metaphorical
+    violence usage than the 2012 candidates's. In both years, Twitter use 
+    had a strong effect on metaphorical violence use where the tweeting candidate was
+    cast as the subject of metaphorical violence, or where the other candidate
+    was the object of metaphorical violence.}
+  \label{tab:twitter-regr-results}
+\end{table}

@@ -1,0 +1,173 @@
+Metaphor is a fundamental cognitive ability that underlies the human capability 
+for abstract reasoning. 
+Conceptual metaphor theory established the relationship
+between metaphors that exist in the mind, \emph{conceptual metaphors}, and 
+metaphors used in communication, \emph{linguistic metaphors}. Linguistic metaphors
+in a message reveal conceptual metaphors of the sender and
+are suggestive of the conceptual metaphors of the receiver, if we assume
+sender and receiver share common communicative ground \cite{Clark1996}.
+Concrete concepts that are directly grounded in physical experience 
+form the basis of abstract concepts \cite{Lakoff1980}. As such, quantifying 
+the relationship between culture and context
+on metaphor use is an important task \cite{Kovecses2010}.
+Here we provide novel time-resolved observations and explanatory
+dynamical models of metaphor use on cable news. 
+Specifically, 
+we recorded metaphorical violence (MV) usage from September to November
+of 2012 and 2016 from two shows from three channels, 
+MSNBC, CNN, and Fox News. A major contribution presented here is the open-source 
+cyberinfrastructure and computational pipeline created for this specific task, 
+but with broad applications
+to collaborative, time-resolved corpus annotation and analysis of the
+human behavior of cable news production. We quantified the details and dynamics of metaphor
+use over the three months. This revealed the
+degree to which cable news outlets act as promoters, expectation-setters, and
+ideological agents, as well as reporters, in different degrees in response to
+differing cultural situations in the two study years, 2012 and 2016. 
+We anticipate our observations and cyberinfrastructure will be used
+as a starting point for many subsequent studies. These studies could include 
+developing more realistic
+treatments for behavioral experiments, an expanded analysis of 
+other revealing types of language use in 
+political discourse, and studies of 
+the multi-modal (video, audio, text) datasets provided by our 
+data source, the Internet Archive's TV News Archive (TVNA).
+
+The production and
+comprehension of many classes of linguistic metaphors have been shown to 
+recruit other mental pathways. Metaphor processing is not independent of
+our motor and emotional circuits \cite{Gallese2005,Lakoff2014,Gibbs2017a}.
+In a 2014 study, Kalmoe found that reading metaphorical violence 
+resulted in increased support for political violence \cite{Kalmoe2014}. 
+This result prompted us to ask just how frequent MV use is on
+cable news, still one of the most influential news sources in the internet age. 
+In this study, our observations will tell us about differences
+in usage between cable news outlets. Eventually, these observations can be
+used as treatments for ``natural experiments'' in the 
+spirit of \cite{Fusaroli2015}. 
+An utterance of metaphorical violence (MV) is one under which the proposition $P$, 
+``this event did or could reasonably happen,'' is false.  The utterance
+also had to be about politics specifically.
+Consider the following examples from 2012, the first metaphor, the second not:
+\begin{exe}
+  \ex Because we want you to pay for your own birth control, that's an 
+    attack on your womb like we're flying a predator drone over your 
+    fallopian tubes and calling in a strike?\footnote{Adam 
+    Carolla on \emph{The O'Reilly Factor}; \url{https://goo.gl/jVBsqH}} 
+    \label{ex:carolla}
+  \ex John McCain and his allies have been trying to turn the Benghazi 
+    attacks into a political scandal for the president since 
+    September.\footnote{Chris Matthews on his show, \emph{Hardball with Chris Matthews}; 
+    \url{https://goo.gl/Pfs4Sc}} \label{ex:benghazi-attacks}
+\end{exe}
+In \ref{ex:carolla}, Adam Corolla is criticizing Sandra Fluke for her efforts to 
+force all employers to provide insurance covering birth control for women. 
+Clearly $P$ is false for the event of ``an attack'' on anyone's ``womb'' by
+means of ``a predator drone,'' meaning \ref{ex:carolla} is a metaphor.
+Metaphor is ultimately a mapping between concepts. 
+Elements from the \emph{source domain} concept are mapped on to the \emph{target domain} 
+concept. These concepts can be specified to varying degrees of specificity as
+the application may require. In our case it suffices to identify \emph{violence}
+as the source domain and \emph{politics} as the target domain. Said a different
+way, metaphorical violence is an expression of understanding politics in
+terms of violence. We call the word that signals, or instantiates, the source
+domain of violence the \emph{violence signal}. We consider only phrases that
+use one of three violence signals: \emph{attack}, \emph{beat}, or \emph{hit}. 
+These three were the most common among a list of about twenty 
+violent words we initially considered. There are many other possible violence 
+signals that we leave as future work to investigate. 
+
+\subsection{Motivation}
+
+Metaphor in political communication is hypothesized to heighten \emph{pathos},
+the feeling part of reason that Aristotle proposed had a major 
+influence on how we think \cite{Charteris-Black2009}.  Returning to Example \ref{ex:carolla}
+some may find Carolla's utterance offensive or humorous, 
+but in either case Carolla achieves a heightened emotional experience 
+through metaphorical violence.
+Since the dawn of conceptual metaphor theory,
+marked by the publishing of \emph{Metaphors We Live By}~\cite{Lakoff1980},
+metaphor researchers have pushed to find a physical theory of metaphor in the
+brain \cite{Feldman2006}. In order to guide such a search, 
+it's necessary first to understand correlations between metaphor and behavior more broadly. 
+Consider a common non-violent example: someone says ``my career has come to a fork.'' 
+Conceptual metaphor theory researchers have identified that 
+comprehension of such an utterance relies on
+co-activation of brain regions associated with everyday naviagation as well
+as regions associated with more abstract decision-making.
+Brain regions associated with 
+navigation but not with ``careers'' are said to be \emph{recruited} for
+simulating the experience of navigating~\cite{Croft2005,Matlock2004,Gibbs2008}.
+Just how MV recruits non-language-specific brain regions is an open question.
+
+The first, now famous, televised presidential debate was between then-vice president 
+Richard Nixon, the Republican party candidate, and then-senator John F. Kennedy,
+the Democratic party candidate. In promoting the first TV debate, TV networks avoided
+using the word \emph{debate} for fear of framing one candidate as ``winning'' 
+and the other ``losing''---the important civic task at hand 
+was supposed to be an elevated one. 
+It was a chance to choose the best course for the nation.
+However, after this first TV debate the 
+press and public mostly agreed that JFK indeed won. 
+Audiences were fascinated by this new political theater
+in their living rooms, so the media shed many of its 
+reservations for sports and violence
+metaphors for describing what was done or should be done in debates 
+\cite[p. 99]{Schroeder2008}. This trend toward increased spectacle and 
+competitive framing has continued since then. On the morning of the first
+1992 presidential debate, on the ABC show \emph{This Week with David Brinkley},
+columnist George Will compared the debates to the Super Bowl, 
+saying ``Each year the hyperbole and rubbish and pageantry
+and marching bands surrounding the little kernel of football in the middle gets
+larger and larger'' \cite[p. 111]{Schroeder2008}. 
+In 2016, \emph{Monday Night Football} ratings for September 26
+were at a historic low, its usual viewership eaten up by the Clinton-Trump 
+debate on the same night.
+That debate was the most-watched presidential debate in history, with an estimated 84
+million viewers. Of those 84 million, 26.2 million watched on
+MSNBC, CNN, or Fox News \cite{Perlberg2016}.  For comparison, the 2016 Super Bowl, the 
+most-watched TV event in history, raked in 111.8 
+million viewers~\cite{Hagemann2016}.
+
+The influence and ideological leanings of cable news make it an important 
+system to study and understand.  The three channels we studied were 
+MSNBC, CNN, and Fox News, the most-watched cable news channels \cite{OConnell2017}. 
+In a 2014 study, survey respondents most frequently mentioned CNN and 
+Fox News as the source they ``turn to most often for news about government and 
+politics.'' As part of the same study, an ``ideological profile'' was created
+for each of these three networks, along with other news outlets, on TV, 
+in print, and on the web. 
+CNN and MSNBC were close to each other on the
+liberal side of this scale, while Fox News was nearly exactly oppositely 
+placed on the conservative side of this ideology scale~\cite{Pew2014}.
+During the lead-up to the 2016 presidential election, 40\% of Trump voters
+said Fox News was their primary source of news, and MSNBC and CNN combined
+accounted for 27\% of Clinton voters primary source of news~\cite{Pew2017}.
+We observed MV usage on three cable news channels from 
+September 1 to November 30 in study years 2012 and 2016. 
+During these dates, four major political TV events happen: the 
+three presidential elections, all but one occurring in October, 
+and the presidential election, called ``Voting Day,'' 
+which is always the first Tuesday in November after November 1.
+
+In addition to revealing details of MV use on US cable news for the study
+of political communication and action, our study
+provides more data for understanding a deep question in 
+cognitive linguistics: to what extent does the cultural context
+influence which metaphors are used~\cite{Gibbs1997,Kovecses2010}?
+The major results of our study are a series of observations about MV use
+across different cultural situations and by different cultural actors. 
+Metaphor use is one of many distinguishing markers of a culture and its subcultures. 
+We want to support two intentionally vague hypotheses about
+culture and metaphor for our specific system under investigation. 
+First, we postulate that MV use changes 
+in response to, or in anticipation of, the cultural events of the 
+presidential debates and Voting Day.
+We also expect metaphor use to differ between the three channels. 
+However, we also expect some similarities, due to the shared cultural 
+frames between the three networks. We left these \emph{a priori} hypotheses
+vague because any hypothesis would simply be a guess. We opt instead to take
+an observational approach, to let
+the data speak for itself. We structure our dynamical observations
+with the aid of a simple model to 
+act as an information processing system \cite{McElreath2016}.
