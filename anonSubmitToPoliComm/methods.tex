@@ -1,0 +1,128 @@
+
+\subsection{Data collection and annotation}
+
+Data were collected from the Internet Archive's TV News Archive
+(TVNA).\footnote{See \url{https://archive.org/details/tv}.} Using custom
+software to access, annotate, and analyze TVNA data, we could effectively
+download, review, and code hundreds of hours of news broadcasts.\footnote{Our
+custom software, Metacorps, is freely available at
+(REDACTED FOR ANONYMITY).}
+% \url{https://github.com/mt-digital/metacorps}.} 
+We collected data from the two
+most highly rated news shows on each network in each of the two study years,
+relying on closed caption data  to create textual transcripts of each show. We
+searched each transcript for words that signal violence, namely, \emph{attack},
+\emph{beat}, or \emph{hit}. If a violence signal was found, a human reviewer
+then manually decided whether it represented metaphorical violence based on
+context, annotating the text to identify subject, verb, and object of the phrase
+for all uses of metaphorical violence. Annotations were stored along the
+transcript, date and time, show, and network to enable later analyses.
+
+We focused primarily on three violence signals which were far the most commonly
+used metaphorically among a list of twenty violence words that we initially 
+considered. Our initial list was built based on a close reading of newspapers 
+and other online news, and cable news transcripts. We assume there is one 
+best interpretation of whether or not a statement is metaphorical. For this reason,
+we do not calculate inter-rater reliability. We have, however, made our 
+full datasets available, including the original phrases found in cable news 
+transcripts containing metaphorical and non-metaphorical violence, and all
+our annotations (INCLUDE LINK TO DATA). 
+Instructions for reviewing our analyses and performing your
+own are in the supplement, and on GitHub at 
+(REDACTED FOR ANONYMITY).
+% \url{https://github.com/mt-digital/metvi-analysis}.
+
+We collected cable television news transcripts indexed by date, network, and
+show. We identified and counted daily metaphorical
+violence use based on the violence signals \emph{attack}, \emph{hit}, and
+\emph{beat} (see Table~\ref{tab:words}). We counted the daily instances of
+Democratic presidential candidates (Barack Obama in 2012 and Hillary Clinton in
+2016) and Republican presidential candidates (Mitt Romney in 2012 and Donald
+Trump in 2016) appearing as the aggressor or victim of metaphorical violence
+(see Table~\ref{tab:subjobj}). Sometimes the aggressor and victim of metaphorical 
+violence are clear, as a reporter on CNN's \emph{Anderson Cooper 360}
+described Clinton criticizing Trump in the first debate as Clinton hitting Trump
+\footnote{\url{https://archive.org/details/CNNW_20160928_040000_Anderson_Cooper_360/start/2820/end/2880}}:
+
+\begin{exe}
+  \ex Clinton \emph{hit} Trump for voicing support for invading Iraq and calling
+    climate change a hoax.
+\end{exe}
+The subject and object are not always explicitly
+specified in a single sentence, but often can be inferred. We include
+a reference to the video link on the Internet Archive so the reader can understand
+the context which leads us to our inferences.
+For instance, a guest on \emph{The Rachel Maddow Show}
+described some of Donald Trump's comments as a metaphorical 
+\emph{attack} on Hillary Clinton, without saying their names explicitly in the sentence\footnote{\url{https://archive.org/details/MSNBCW_20161021_010000_The_Rachel_Maddow_Show/start/3000/end/3060}}
+
+\begin{exe}
+  \ex One joke after another \ldots was a political attack mildly veiled in
+  humor.
+\end{exe}
+
+
+\subsection{Dynamical statistical model}
+
+We modeled change in frequency of metaphorical language use as an impulse
+function with two states:
+
+\begin{equation} \label{eq:model} 
+  f[t] = \begin{cases} f^{(1)} \text{ if } t \in T^{(1)} \\
+f^{(2)} \text{ if } t \in T^{(2)} 
+  \end{cases} 
+\end{equation}
+\noindent
+
+Many more complicated models for change in frequency are possible. Here, we
+simply used the simplest model of change---that there is one state and then at
+some point later there is another.  Of course, in general there many be fewer
+than two states or more than two states, and there is no reason to suppose there
+would be exactly two.  Nevertheless, we have opted to use the simplest possible
+model, supposing there is change.
+
+The dates for which we have data form a time series, $T$, of frequencies of use
+for each of the three networks in each of the two election years, six total. All
+shows do not air episodes every day. When neither of a network's two shows aired
+an episode on a given day, that day is not included in $T$. On a day that is
+included in $T$, there may be one or two episodes, so when considering dynamics,
+we plot and model the frequency of metaphorical violence use per episode.
+Frequency is simply the number of uses in a day divided by the number of
+episodes of the shows in that day. The time series are modeled as beginning at a
+mean frequency $f^{(1)}$ (State 1), then at some point later, the mean frequency
+changes to $f^{(2)}$ (State 2). Model fitting amounts to categorizing dates as
+either belonging to State 1 or State 2. These are subsets of $T$, with the State
+1's dates denoted $T^{(1)}$ and State 2's dates denoted $T^{(2)}$:
+
+\[ T^{(2)} = \{t \in T: t_{first}^{(2)} \leq t \leq t_{last}^{(2)} \} \]
+\noindent and 
+
+\[ T^{(1)} = T~\setminus~T^{(2)}.  \] \noindent To fit parameters
+$t_{first}^{(2)}$ and $t_{last}^{(2)}$ to the model to minimize error, we used
+Bayesian multi-model inference, which allowed us to quantify the likelihood that
+alternate parameterizations would better fit the observed
+data~\cite{Burnham2011}. Specifically, to determine the best-fitting model, we
+use Bayesian multimodel inference to infer which parameters are most likely to
+best represent the system dynamics \cite{Burnham2011}.  Choosing a model with
+minimum AIC when all models have the same number of parameters is equivalent to
+selecting the model with minimum error, or maximum log-likelihood. Using the AIC
+allows us to calculate the relative likelihood of different parameterizations.
+Once the minimum AIC is found, call it $\text{AIC}_{min}$, the relative
+likelihood that model parameterization $i$ outperforms the model with minimum
+AIC is $\text{exp}(\frac{\text{AIC}_{min} - \text{AIC}_i}{2})$. The AIC on
+its own tells us nothing about how well the model matches the data, only  how
+well the model performs relative to other models. An added feature of using this
+inference approach is that it reveals more about the system dynamics than if we
+were to simply select and use the  model that minimized error. It also provides
+a foundation for future work that considers more complex metaphorical violence
+language dynamics. 
+
+Given a model we can calculate the fractional change in frequency, which we
+denote by \emph{delta}: 
+\begin{equation} 
+  \text{\emph{delta}} = \frac{f^{(2)} - f^{(1)}}{f^{(1)}}.  
+  \label{eq:delta} 
+\end{equation} 
+\noindent \emph{Delta},
+$t^{(2)}_{first}$, and $t^{(2)}_{last}$ enable us to compare changes in
+metaphorical violence language frequency across the networks and over time.

@@ -1,0 +1,140 @@
+Our raw data comes from the Internet Archive's TV News Archive (TVNA).
+The TVNA is a curated library with millions of episodes of Cable News 
+from the last decade or so, with 
+hundreds of hours of new programming added daily. We accessed the TVNA 
+resources through its HTTP
+application programming interface (API) for programmatic search and access to 
+episode data and metadata. 
+To consume resources from the TVNA API, we developed a higher-level Python API called
+\emph{iatv}. To facilitate rapid annotation and review of the resources
+we gather from the TVNA, we developed a data model that combines
+annoatater analysis and TVNA metadata. This data model is implemented as
+a MongoDB database. This database powers a web application for
+collaborative metaphor annotation that we have called \emph{Metacorps}. 
+Metacorps is in active open-source development with the hope that others will eventually
+contribute to and use the system. This will hopefully lead to
+more publically-available gold-standard sets of
+metaphor identifications to be used in developing and training
+machine learning systems and other metaphor research. 
+
+In this study, we use closed captions from the TVNA, which we convert to
+transcripts; each transcript is a document in the corpus. 
+The two study years have their own associated corpus. We repeat our analysis
+identically on the two corpora. 
+Each transcript then comes from a single episode on a given channel.  
+In each year, we search the transcripts of the shows for the violence signals 
+we studied, \emph{attack}, \emph{hit}, and \emph{beat}. These potential
+instances of MV are saved to the database, along with the relevant metadata
+fields air datetime, program name (e.g. \emph{Erin Burnett OutFront}),
+and network. Each potential instance of metaphor is displayed in 
+\emph{Metacorps} where a human annotator decides if each potential instance
+is a metaphor, and notes who are the subject and object of MV, if they 
+exist. 
+
+After processing and annotation, the data are indexed by a number of dimensions: 
+time, network, violence signal, subject, and object.
+Thus, we can count the number of uses of MV along slices of any of these
+five dimensions. For example, we can query our dataset to find the total
+number of MV uses in 2016 on CNN, where Donald Trump is the object of
+metaphorical violence (shown in Table~\ref{tab:subjobj-2016}. 
+Time, violence signal, and subject are not specified in this example, 
+so this number of uses would be the total across all
+signals, subjects, and objects. Each of the data tables, 
+Tables~\ref{tab:fit-parameters},~\ref{tab:words},and~\ref{tab:subjobj}, 
+contain sums across such cross-sections. These sums allow us to answer some 
+basic questions about MV usage on cable news.
+First, which networks produce the most MV? Is this consistent across years?
+What is the contribution of each show to total MV use? 
+What is the difference in how often a violence signal used, 
+and does this change across networks or between the two election years?
+And finally, who is conceptualized more often as attacking and being attacked in MV on
+cable news, and does this change across networks? 
+
+In order to compare the dynamics of the different networks, and across 
+dimensional cross-sections, we hypothesized that there was a 
+significant change in the mean from one value to another value, and then
+potentially back again,
+sometime in the three months of interest in each of the study years. This is
+operationalized as an impulse model, written
+
+\begin{equation}
+  f[t] = \begin{cases}
+      f^{(1)} \text{ if } t \in T^{(1)} \\
+      f^{(2)} \text{ if } t \in T^{(2)}
+    \end{cases}
+  \label{eq:model}
+\end{equation}
+\noindent
+and illustrated in Figure~\ref{fig:model-illustration}.
+
+This model clearly requires further explanation, which follows.
+The dates for which we have data for a timeseries are an ordered set 
+we denote $T$. The timeseries are frequencies of usage for one of the three
+channels in each of the two election years---six total timeseries.
+A particular show does not air an episode every day. When neither of a channel's
+two shows we studied aired episodes on a given day, that day is not included
+in $T$. On a day that is included in $T$, there may be one or two episodes,
+so when considering dynamics, we plot and model the frequency of
+MV usage. Frequency is simply the number of uses in a day 
+divided by the number of episodes in that day. 
+The timeseries are modeled to begin at a mean frequency
+$f^{(1)}$, then at some time the mean frequency changes to be $f^{(2)}$. 
+For brevity, when the system is modeled to have mean frequency $f^{(1)}$ we say
+it is in State 1. When the system is modeled to have mean frequency $f^{(2)}$ we
+say it is in State 2.
+Model fitting, then, amounts to categorizing dates as either belonging to
+State 1 or State 2. These are subsets of $T$, with the State 1's dates
+denoted $T^{(1)}$ and State 2's dates denoted $T^{(2)}$. These subsets are
+defined as
+
+\[
+  T^{(2)} = \{t \in T: t_{first}^{(2)} \leq t \leq t_{last}^{(2)} \}
+\]
+\noindent
+and 
+
+\[
+  T^{(1)} = T~\setminus~T^{(2)}.
+\]
+\noindent
+Model fitting amounts to finding the parameters $t_{first}^{(2)}$ and $t_{last}^{(2)}$
+that result in a model that minimizes the error. As discussed further in 
+the Methods section, we find this best-fit model through Bayesian 
+multi-model inference, which allows us to quantify the likelihood that alternate
+parameterizations would better fit the observed data \cite{Burnham2011}. 
+Once the best-fit model has been
+identified, we immediately have the timing of gross changes in MV frequency.
+Furthermore, we can calculate the fractional change in frequency, which we
+call reactivity,
+
+\begin{equation}
+  \mathrm{\emph{reactivity}} = \frac{f^{(2)} - f^{(1)}}{f^{(1)}}.
+  \label{eq:reactivity}
+\end{equation}
+\noindent
+
+Reactivity, $t^{(2)}_{first}$, and $t^{(2)}_{last}$ serve as our standard 
+measures for comparing changes in MV frequency across dimensional cross-sections.
+
+
+% Square brackets indicate time is discrete.
+% Fitting this model to the data consists in finding the optimal start time, $t^{(2)}_0$ 
+% and end time, $t^{(2)}_{N^{(2)}}$, of the excited state (see Figure~\ref{fig:model-illustration} 
+% for an illustration). Once an optimal step-function model is found, we compare it
+% to the null model, where there is one mean, not two, and $N^{(2)} = 0$. We use
+% multimodel inference to determine the relative likelihood of picking one pair
+% of start and end times for $T^{(2)}$ to another, with the Akaike information
+% criterion as our inference metric. Furthermore, by using the AIC now, 
+% we are building in flexibility to compare more complex 
+% models of metaphor usage in the future, say with more regressors than 
+% what bin the date belongs to.
+% If the relative likelihood of the step-function model to the null model is
+% significantly high we can say that the data are meaningfully described by our
+% impulse function model.  Thus, we modeled frequency of MV use over time on
+% MSNBC, CNN, and Fox News in 2012 and 2016. By fitting this model, we were able
+% to compare the magnitude, sign, and timing of major fluctuations in the 
+% mean of metaphorical violence usage.  The derived quantity
+% we obtain through this modeling procedure is \emph{reactivity}, 
+% which is simply the percent change from the beginning frequency on September 1,
+% $f^{(1)}$, to the impulse frequency, the second frequency in the model,
+% $f^{(2)}$,
