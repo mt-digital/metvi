@@ -27,8 +27,8 @@ our annotations (\url{https://osf.io/ypa8h/}). We provide a way to review our
 annotations, modify them, and re-run all these analysis through a Docker 
 container of the Metacorps web application and a Jupyter notebook that 
 runs all analyses. Instructions for reviewing our analyses and performing your
-own are in the on GitHub 
-(\url{https://github.com/mt-digital/metvi-analysis}).
+own are in the supplement, and on GitHub at 
+\url{https://github.com/mt-digital/metvi-analysis}.
 
 We collected cable television news transcripts indexed by date, network, and
 show. We identified and counted daily metaphorical
@@ -59,31 +59,6 @@ described some of Donald Trump's comments as a metaphorical
   humor.
 \end{exe}
 
-%%
-% Table with network and violent words
-%
-\begin{table}[H]
-  \centering
-
-  \begin{subtable}{\linewidth}
-    \centering
-    \input{Figures/Table2-2012.tex}
-    \caption{\quad 2012}
-    \label{tab:words-2012}
-  \end{subtable}
-  
-  \vspace{.25in}
-
-  \begin{subtable}{\linewidth}
-    \centering
-    \input{Figures/Table2-2016.tex}
-    \caption{\quad 2016}
-    \label{tab:words-2016}
-  \end{subtable}
-
-  \caption{Uses and \emph{delta} for violence signals on each network in 2012 and 2016.}
-  \label{tab:words}
-\end{table}
 
 \subsection{Dynamical statistical model}
 
@@ -143,8 +118,7 @@ language dynamics.
 Given a model we can calculate the fractional change in frequency, which we
 denote by \emph{delta}: 
 \begin{equation} 
-  delta = \frac{f^{(2)} - f^{(1)}}{f^{(1)}}.  
-  % \text{\emph{delta}} = \frac{f^{(2)} - f^{(1)}}{f^{(1)}}.  
+  \text{delta} = \frac{f^{(2)} - f^{(1)}}{f^{(1)}}.  
   \label{eq:delta} 
 \end{equation} 
 \noindent \emph{Delta},

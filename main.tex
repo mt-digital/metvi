@@ -1,17 +1,18 @@
 % Author: Matthew Turner
 
-\documentclass[11pt,letterpaper]{article}
+\documentclass[12pt,letterpaper]{article}
 % \documentclass[11pt]{report}
 % \documentclass{report}
 % \documentclass{book}
-\usepackage[bookmarks]{hyperref}
+\usepackage[bookmarks, hidelinks]{hyperref}
+\usepackage{endfloat}
 \usepackage{amssymb,amsmath}
 % \usepackage{fullpage}
 \usepackage{tabulary}
 \usepackage{tabularx}
 \usepackage{float}
-% \usepackage[margin=1.00in]{geometry}
-\usepackage[margin=0.90in]{geometry}
+\usepackage[margin=1.00in]{geometry}
+% \usepackage[margin=0.90in]{geometry}
 
 \usepackage{caption}
 \usepackage{booktabs}
@@ -25,8 +26,15 @@
 \usepackage{wrapfig}
 \usepackage[english]{babel}
 \usepackage{lmodern}
-\usepackage{setspace}
+\usepackage{setspace,caption}
+\captionsetup{font=doublespacing}
 \doublespace
+\usepackage{footmisc}
+\renewcommand{\footnotelayout}{\doublespacing} % set spacing in footnotes
+\newlength{\myfootnotesep}
+\setlength{\myfootnotesep}{\baselineskip}
+\addtolength{\myfootnotesep}{-\footnotesep}
+\setlength{\footnotesep}{\myfootnotesep}
 \usepackage{bigfoot}
 \usepackage[export]{adjustbox}
 \setlength\intextsep{0pt}
@@ -41,14 +49,16 @@
 % \usepackage{url}
 \noautomath
 
-\title{Metaphorical Violence in Political Discourse}
+\title{Metaphorical Violence in Political Discourse\footnote{6163 words}}
 
-\author[1]{Matthew~A.~Turner}
+\author[1]{Matthew~A.~Turner\thanks{Corresponding Author: mturner8@ucmerced.edu}}
 \author[1,2]{Paul~P.~Maglio}
 \author[1]{Teenie~Matlock}
 
 \affil[1]{\footnotesize Cognitive Science Program, University of California, Merced}
 \affil[2]{\footnotesize Ernest and Julio Gallo Management Program, University of California, Merced}
+
+\date{}
 
 \begin{document}
 \maketitle
@@ -73,7 +83,7 @@
 
 \clearpage
 
-\section{Supplement}
-\input{supplement.tex}
+% \section{Supplement}
+% \input{supplement.tex}
 
 \end{document}

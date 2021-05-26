@@ -1,0 +1,273 @@
+\subsection{Additional figures and tables}
+
+%%
+% Table with details of the model fits
+%
+\begin{table}[!h]
+  \centering
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table1-2012.tex}
+    \caption{\quad2012; total uses: 758}
+    \label{tab:fit-parameters-2012}
+  \end{subtable}
+  
+  \vspace{.25in}
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table1-2016.tex}
+    \caption{\quad2016; total uses: 583}
+    \label{tab:fit-parameters-2016}
+  \end{subtable}
+
+  \caption{Parameters for the best-fit (most likely) model for 2012 and 2016.}
+  \label{tab:fit-parameters}
+\end{table}
+
+%%
+% Table with network and violent words
+%
+\begin{table}[h]
+  \centering
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table2-2012.tex}
+    \caption{\quad 2012}
+    \label{tab:words-2012}
+  \end{subtable}
+  
+  \vspace{.25in}
+
+  \begin{subtable}{\linewidth}
+    \centering
+    \input{Figures/Table2-2016.tex}
+    \caption{\quad 2016}
+    \label{tab:words-2016}
+  \end{subtable}
+
+  \caption{Uses and \emph{delta} for violence signals on each network in 2012 and 2016.}
+  \label{tab:words}
+\end{table}
+
+% \begin{table}[!h]
+
+%   \centering
+%   \bgroup
+%     \begin{subtable}{\textwidth}
+%       \centering
+%       \begin{tabular}{lr}
+%         \toprule
+%         Program name & Total MV uses \\
+%         \midrule
+%         The Rachel Maddow Show (MSNBC) & 93 \\
+%         Hardball With Chris Matthews (MSNBC) & 208 \\
+%         Anderson Cooper 360 (CNN) & 99 \\
+%         Piers Morgan Tonight (CNN) & 118 \\
+%         The O'Reilly Factor (Fox News) & 141 \\
+%         Hannity (Fox News) & 133 \\
+%         \bottomrule
+%       \end{tabular}
+%       \caption{Total uses by show in 2012}
+%       \label{tab:by-show-2012}
+%     \end{subtable} \\  \vspace{1.5em}
+%     \begin{subtable}{\textwidth}
+%       \centering
+%       \begin{tabular}{lr}
+%         \toprule
+%         Program name & Total MV uses \\
+%         \midrule
+%         The Rachel Maddow Show (MSNBC) & 66 \\
+%         The Last Word with Lawrence O'Donnel (MSNBC) & 80 \\
+%         Anderson Cooper 360 (CNN) & 100 \\
+%         Erin Burnett OutFront (CNN) & 118 \\
+%         The O'Reilly Factor (Fox News) & 146 \\
+%         The Kelly File (Fox News) & 148 \\
+%         \bottomrule
+%       \end{tabular} \quad
+%       \caption{Total uses by show in 2016}
+%       \label{tab:by-show-2016}
+%     \end{subtable}
+
+%   \egroup
+%   \caption{Total uses by show in each of the two years}
+%   \label{tab:by-show}
+% \end{table}
+
+\clearpage
+\begin{figure}[!h]
+  \centering
+    \begin{subfigure}{0.9\linewidth}
+      \centering
+      \includegraphics[width=\textwidth]{Figures/2012-all.pdf}
+      \caption{2012}
+      \label{fig:2012-all-reg}
+    \end{subfigure} \\[2em]
+    \begin{subfigure}{0.9\linewidth}
+      \centering
+      \includegraphics[width=\textwidth]{Figures/2016-all.pdf}
+      \caption{2016}
+      \label{fig:2012-all-reg}
+    \end{subfigure}
+  \caption{Metaphorical violence tracked candidate tweets significantly in 2012 and
+    2016. Frequency is over all networks and subject/object relationships.
+    Correlation coefficient is greater in 2016 than 2012, supporting other 
+    claims of 2016 being a ``Twitter election.''
+  }
+  \label{fig:regressions-all}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=0.95\textwidth]{Figures/2012-network.pdf}
+  \caption{Regressions of metaphorical violence on each network in response
+   to tweets from @BarackObama and @MittRomney.}
+  \label{fig:2012-network}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.95\textwidth]{Figures/2016-network.pdf}
+  \caption{Regressions of metaphorical violence on each network in response
+   to tweets from @HillaryClinton and @realDonaldTrump.}
+  \label{fig:2016-network}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Figures/2012-subjobj.pdf}
+  \caption{Regressions of metaphorical violence faceted by subject and object
+    in response to to tweets from @BarackObama and @MittRomney.}
+  \label{fig:2012-subjobj}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Figures/2016-subjobj.pdf}
+  \caption{Regressions of metaphorical violence faceted by subject and object
+    in response to to tweets from @HillaryClinton and @realDonaldTrump.}
+  \label{fig:2016-subjobj}
+\end{figure}
+
+\clearpage
+
+\subsection{Notes on model fitting}
+
+We presented both Bayesian-type relative likelihood inference probabilities
+for the fitted models as well as the frequntist p-value measure for each 
+candidate model parameterization. Frequentists can breathe a sigh of relief, 
+since all but one model's optimal paramaterization had a p-value greater than
+0.01; it was 0.011. The other five optimal models had p-value significance 
+less than 0.01 (Tables~\ref{tab:relative-likelihoods-2012} 
+and~\ref{tab:relative-likelihoods-2016}).  While the significance can
+tell us whether or not a model is appropriate for the data, there were many 
+models that were significant from a frequentist perspective. The relative
+likelihood of alternative parameterizations tells us the probability that an
+alternative parameterization will capture more information about the dynamics
+than the parameterization with minimal AIC, our chosen information metric.
+In an inexact sense, the various relative likelihoods tell us the weight of
+each parameterization in some superordinate representation that is a
+weighted sum of all potential parameterizations. Exactly this is done in some
+applications, where a weighted sum of models is selected as the optimal model, 
+typically models with a differing number of independent dimensions.
+The presence of either greater or fewer large relative likelihoods signals either
+a stronger or weaker presence of the impulse-type behavior we have hypothesized.
+In 2012, the presence of an impulse was much weaker, with the next nine most
+likely parameterizations having a relative likelihood greater than 0.5, with
+two exceptions of .47 and .41 for MSNBC (Table~\ref{tab:supp-msnbc-2012}). 
+In 2016, only one alternative had a relative
+likelihood greater than 0.5, also on MSNBC: 0.508 
+(Table~\ref{tab:supp-msnbc-2016}). So in this sense, MSNBC had the best-defined
+impulse in 2012 and the worst-defined impulse in 2016.
+
+In 2012, two networks showed negative reactivity.
+In one case, CNN's MV usage dips after election
+day, perhaps there was no longer a cultural driving force for MV usage
+because there was no more ``fighting'' in the debates or elections. 
+The other case where
+reactivity was negative was Fox News' MV usage in 2012. This may be because
+Obama was perceived as the more skilled debater and the Republican side 
+avoided raising emotions and expectations over the debates, or other reasons
+discussed later. MSNBC showed positive reactivity in 2012, 
+more than doubling its frequency from its initial base level to its 
+modulated level.  In 2016, the three networks showed greater coherence in their 
+behavior.  Fox News was the most reactive, followed closely by CNN. The time period
+of Fox News' modulated state lasted ten days longer than CNN's. MSNBC was 
+the least reactive, but with a significant reactivity of 163\% 
+(Table~\ref{tab:fit-parameters}).
+
+
+
+
+\begin{table}[!h]
+  \centering
+
+  \bgroup
+    \begin{subtable}{\linewidth}
+      % \hfill
+      \centering
+      \input{SupplementTables/Table1-2012-MSNBCW.tex}
+      \caption{MSNBC; 2012}
+      \label{tab:supp-msnbc-2012}
+    \end{subtable} \\  \vspace{1.5em}
+
+    \begin{subtable}{\linewidth}
+      \centering
+      \input{SupplementTables/Table1-2012-CNNW.tex}  
+      \caption{CNN; 2012}
+        \label{tab:supp-cnn-2012}
+    \end{subtable} \\  \vspace{1.5em}
+
+    \begin{subtable}{\linewidth}
+      \centering
+      \input{SupplementTables/Table1-2012-FOXNEWSW.tex} 
+      \caption{Fox News; 2012}
+      \label{tab:supp-fox-2012}
+    \end{subtable}
+  \egroup
+
+  \caption{Relative likelihood of the null model and the ten most-likely
+    dynamical models with alternative parameterizations. Parameterizations given
+    are the first and last date of the excited state.}
+  \label{tab:relative-likelihoods-2012}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \bgroup
+    \begin{subtable}{\linewidth}
+      % \hfill
+      \centering
+      \input{SupplementTables/Table1-2016-MSNBCW.tex}
+      \caption{MSNBC; 2016}
+      \label{tab:supp-msnbc-2016}
+    \end{subtable} \\  \vspace{1.5em}
+
+    \begin{subtable}{\linewidth}
+      \centering
+      \input{SupplementTables/Table1-2016-CNNW.tex}  
+      \caption{CNN; 2016}
+        \label{tab:supp-cnn-2016}
+    \end{subtable} \\  \vspace{1.5em}
+
+    \begin{subtable}{\linewidth}
+      \centering
+      \input{SupplementTables/Table1-2016-FOXNEWSW.tex} 
+      \caption{Fox News; 2016}
+      \label{tab:supp-fox-2016}
+    \end{subtable}
+  \egroup
+
+  \caption{Relative likelihood of the null model and the ten most-likely
+    dynamical models with alternative parameterizations. Parameterizations given
+    are the first and last date of the excited state.}
+  \label{tab:relative-likelihoods-2016}
+\end{table}
+

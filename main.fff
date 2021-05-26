@@ -1,0 +1,27 @@
+\begin{figure}[H]
+  \vspace{.2in}
+  \centering
+  \begin{subfigure}{0.7\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ModelFits-2012.pdf}
+   \caption{\quad2012}
+    \label{fig:ModelFits-2012}
+  \end{subfigure}
+  \begin{subfigure}{0.7\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ModelFits-2016.pdf}
+   \caption{\quad2016}
+    \label{fig:ModelFits-2016}
+  \end{subfigure}
+
+  \caption{Observed daily frequencies (markers) and best-fit models (lines).
+    The dynamical impulse model is given in
+    Equation 1. In four of the six network-year pairs,
+    there is an increase in the frequency of metaphorical violence language in the
+    three-month study period: MSNBC in 2012 and all three networks in 2016.
+    However, two of the six network-year pairs showed decreases in frequency
+    of metaphorical violence language use in one three-month period: CNN and Fox News
+    in 2012.
+  }
+  \label{fig:ModelFits}
+\end{figure}

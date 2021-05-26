@@ -1,0 +1,20 @@
+wordcount   2016/06/03 v1.7
+
+
+The package provides a relatively easy way of estimating the number of
+words in a LaTeX document that does not require dvitty or other DVI
+converters. It does however require something like Unix grep -c that
+can search a file for a particular string and report the number of
+matching lines. An accompanying shell script wordcount.sh contains
+more information in its comments.
+
+Following Michael's death, his family have requested that his TeX
+related files are made publicly available under the LPPL license.
+
+
+The wordcount package is available under the
+LaTeX Project Public License version 1
+or (at your option) any later version.
+https://latex-project.org/lppl/
+(LPPL maintenance status: unmaintained)
+
