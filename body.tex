@@ -125,7 +125,7 @@ metaphorical violence.  Analyzing subject and object allowed us to determine who
 was portrayed as the aggressor and who was portrayed as the victim.
 
 \section{Methods}
-\input{methods.tex}
+\input{/Users/mt/workspace/Papers/metvi/methods.tex}
 
 \section{Analysis}
 
@@ -178,13 +178,13 @@ first-lady.  Candidate Trump was a rich, controversial television star.
   \centering
   \begin{subfigure}{0.7\linewidth}
     \centering
-    \includegraphics[width=\textwidth]{Figures/ModelFits-2012.pdf}
+    \includegraphics[width=\textwidth]{/Users/mt/workspace/Papers/metvi/Figures/ModelFits-2012.pdf}
    \caption{\quad2012}
     \label{fig:ModelFits-2012}
   \end{subfigure}
   \begin{subfigure}{0.7\linewidth}
     \centering
-    \includegraphics[width=\textwidth]{Figures/ModelFits-2016.pdf}
+    \includegraphics[width=\textwidth]{/Users/mt/workspace/Papers/metvi/Figures/ModelFits-2016.pdf}
    \caption{\quad2016}
     \label{fig:ModelFits-2016}
   \end{subfigure}
@@ -269,22 +269,23 @@ October 27 for CNN and October 22 for Fox News. MSNBC's frequency of the use of
 metaphorical violence language rose later, on October 8, but decreased around
 the same time as the other networks, on October 26. 
 
-\begin{table}[!h]
-  \vspace{.25in}
+% \begin{longtable}
+\begin{table}
+  % \vspace{.25in}
   \centering
   \begin{subtable}{\linewidth}
     \centering
-    \input{Figures/Table3-2012.tex}
+    \input{/Users/mt/workspace/Papers/metvi/Table3-2012.tex}
     % \input{Table3-2012.tex}
     \caption{\quad 2012}
     \label{tab:subjobj-2012}
   \end{subtable}
   
-  \vspace{.25in}
+  % \vspace{.25in}
 
   \begin{subtable}{\linewidth}
     \centering
-    \input{Figures/Table3-2016.tex}
+    \input{/Users/mt/workspace/Papers/metvi/Table3-2016.tex}
     % \input{Table3-2016.tex}
     \caption{\quad 2016}
     \label{tab:subjobj-2016}
@@ -294,6 +295,7 @@ the same time as the other networks, on October 26.
   subject and object of metaphorical violence.}
   \label{tab:subjobj}
 \end{table}
+% \end{longtable}
 
 
 \section{Discussion}
@@ -535,7 +537,7 @@ illegal immigration and not waste his time on fighting the Republican nominee.''
 Ryan had said he was ``sickened'' by Trump's comments and decided to cancel a
 scheduled joint appearance with Trump \cite{Fahrentold2016}.
 Trump would criticize the Speaker five more times in
-the next six days on Twitter\footnote{\url{https://www.thetrumparchive.com/?searchbox=%22Paul+Ryan%22&dates=%5B%222016-07-31%22%2C%222016-11-30%22%5D}}.
+the next six days on Twitter\footnote{\url{https://www.thetrumparchive.com/?searchbox=\%22Paul+Ryan\%22&dates=\%5B\%222016-07-31\%22\%2C\%222016-11-30\%22\%5D}}.
 All three networks reported on this exchange using metaphorical
 violence. Juan Williams said this on October 15 on \emph{The O'Reilly Factor}\footnote{\url{https://archive.org/details/FOXNEWSW_20161016_030000_The_OReilly_Factor/start/420/end/480}}:
 
@@ -544,6 +546,7 @@ violence. Juan Williams said this on October 15 on \emph{The O'Reilly Factor}\fo
   Ryan because Paul Ryan is distancing himself, but he's attacking a fellow
   Republican instead of broadening or shoring up his base with republicans.
 \end{exe}
+
 In the following weeks, there were many more contentous issues which caused a
 series of ``attacks'' and counter-attacks. Among these was the Al Smith 
 fundraising dinner, a tradition where each candidate is invited and expected
@@ -574,7 +577,7 @@ analysis confirms that, compared to 2012, 2016 was the year of the ``Twitter Ele
 impact. 
 
 In 2016, all linear model fits were significant across categories of 
-metaphorical violence (Table~\ref{tab:twitter-regr-results}). In 2012, there
+metaphorical violence (Table~\ref{tab:twitterRegrResults}). In 2012, there
 were still a number of statistically significant fits, but much less variance
 could be explained through Twitter use. About 1/3 of metaphorical violence use across all
 categories can be predicted from either Hillary Clinton's or Donald Trump's
@@ -584,24 +587,26 @@ CNN was most reactive to Twitter use. Candidate Twitter use explained between
 in metaphorical violence where the candidates were either the subject or object
 of metaphorical violence in both years. 
 
-\begin{table}[!h]
-  \vspace{.45in}
-  \centering
-  \input{TweetCoeffTable.tex}
-  \caption{Regression coefficients, $r^2$, and significance indicators for
-    linear models of metaphorical violence usage as a function of the number of
-    tweets from individual candidates. The regression
-    coefficient represents the additional metaphorical violence uses that 
-    occur with each message the candidate tweets. $r^2$ represents the fraction
-    of variance that is represented through a linear relationship with candidate
-    tweets. The 2016 candidates's Twitter use had a greater impact on metaphorical
-    violence usage than the 2012 candidates's. In both years, Twitter use 
-    had a strong effect on metaphorical violence use where the tweeting candidate was
-    cast as the subject of metaphorical violence, or where the other candidate
-    was the object of metaphorical violence.}
-  \label{tab:twitter-regr-results}
-  \vspace{.25in}
-\end{table}
+  \begin{table}
+    \centering
+    \vspace{.45in}
+    \input{/Users/mt/workspace/Papers/metvi/TweetCoeffTable.tex}
+% \caption{yo}
+    \caption{Regression coefficients, %$r^2$, 
+      and significance indicators for
+      linear models of metaphorical violence usage as a function of the number of
+      tweets from individual candidates. The regression
+      coefficient represents the additional metaphorical violence uses that 
+      occur with each message the candidate tweets. % $r^2$ represents the fraction
+      of variance that is represented through a linear relationship with candidate
+      tweets. The 2016 candidates's Twitter use had a greater impact on metaphorical
+      violence usage than the 2012 candidates's. In both years, Twitter use 
+      had a strong effect on metaphorical violence use where the tweeting candidate was
+      cast as the subject of metaphorical violence, or where the other candidate
+      was the object of metaphorical violence.}
+    \label{tab:twitterRegrResults}
+    \vspace{.25in}
+  \end{table}
 % Illustrations of the linear models with significance
 % values are shown in Figures~\ref{fig:regressions-all}-\ref{fig:2016-subjobj}.
 
